@@ -1,0 +1,9 @@
+import{n as e}from"./rolldown-runtime-sJBDdmOt.js";import{s as t}from"./chunk-W22LQPXL-D4uv3rSz.js";import{i as n,r}from"./react-DITjJg24.js";import{a as i,o as a}from"./blocks-DpewhD34.js";function o(e){let t={a:`a`,code:`code`,h1:`h1`,li:`li`,p:`p`,strong:`strong`,ul:`ul`,...n(),...e.components};return(0,c.jsxs)(c.Fragment,{children:[(0,c.jsx)(i,{title:`Introduction`}),`
+`,(0,c.jsx)(t.h1,{id:`babylonian-numerals`,children:`Babylonian Numerals`}),`
+`,(0,c.jsxs)(t.p,{children:[`Stories for `,(0,c.jsx)(t.a,{href:`https://www.npmjs.com/package/@babylonian/core`,rel:`nofollow`,children:(0,c.jsx)(t.code,{children:`@babylonian/core`})}),`, which renders any number as `,(0,c.jsx)(t.a,{href:`https://en.wikipedia.org/wiki/Babylonian_cuneiform_numerals`,rel:`nofollow`,children:`Babylonian cuneiform numerals`}),` in SVG.`]}),`
+`,(0,c.jsxs)(t.ul,{children:[`
+`,(0,c.jsxs)(t.li,{children:[(0,c.jsx)(t.strong,{children:`Number Builder`}),`: type any number in the `,(0,c.jsx)(t.code,{children:`value`}),` control and adjust every `,(0,c.jsx)(t.code,{children:`toSvg`}),` option.`]}),`
+`,(0,c.jsxs)(t.li,{children:[(0,c.jsx)(t.strong,{children:`Digits`}),`: every digit from 0 to 59.`]}),`
+`]}),`
+`,(0,c.jsx)(t.p,{children:`Corner wedges are tens and upright wedges are ones, so a digit runs from 1 to 59. Places count in sixties. Empty places get the late Babylonian placeholder, a dot marks the start of the fraction, and negatives start with a horizontal wedge.`}),`
+`,(0,c.jsxs)(t.p,{children:[`For downloads and shareable links, use the `,(0,c.jsx)(t.a,{href:`../playground/`,children:`playground`}),` in the docs.`]})]})}function s(e={}){let{wrapper:t}={...n(),...e.components};return t?(0,c.jsx)(t,{...e,children:(0,c.jsx)(o,{...e})}):o(e)}var c;function l(){return(l=e((()=>{c=t(),r(),a()})))()}l();export{s as default};
