@@ -17,6 +17,7 @@ export interface Look {
 export const system = {
   name: 'Babylonian cuneiform numerals',
   base: 60,
+  breakdownTitle: 'Digit by digit, in base 60',
   sizeLabel: 'Height',
   sizeDefault: 120,
   gapDefault: 22,
