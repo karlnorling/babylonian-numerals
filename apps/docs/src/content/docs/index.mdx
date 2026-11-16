@@ -1,0 +1,56 @@
+---
+title: Babylonian Numerals
+description: Render any number as Babylonian cuneiform numerals in SVG, PNG, JPEG or WebP, from code or the command line.
+template: splash
+hero:
+  tagline: >-
+    Draw any number the way Babylonian scribes pressed it into clay: corner wedges for tens, upright wedges for ones, in base 60. SVG with zero dependencies, plus PNG, JPEG and WebP.
+  actions:
+    - text: Open the playground
+      link: /babylonian-numerals/playground/
+      icon: pencil
+    - text: Get started
+      link: /babylonian-numerals/getting-started/
+      icon: right-arrow
+      variant: secondary
+    - text: GitHub
+      link: https://github.com/karlnorling/babylonian-numerals
+      icon: github
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+import Glyph from '../../components/Glyph.astro';
+import ColourExamples from '../../components/ColourExamples.astro';
+
+<div class="examples">
+  <Glyph value={1993} caption="1993" />
+  <Glyph value={60} caption="60" />
+  <Glyph value={3661} caption="3661" />
+  <Glyph value={'12.5'} caption="12.5" />
+  <Glyph value={-42} caption="-42" />
+</div>
+
+<ColourExamples />
+
+<CardGrid>
+  <Card title="Try any number" icon="pencil">
+    The [playground](/babylonian-numerals/playground/) draws whatever you type, breaks it into
+    base-60 digits, and lets you download SVG, PNG, JPEG or WebP.
+  </Card>
+  <Card title="Base 60, exactly" icon="add-document">
+    Every decimal fraction is exact in base 60, and empty places get the late Babylonian
+    placeholder. [See how](/babylonian-numerals/how-it-works/).
+  </Card>
+  <Card title="Zero dependencies" icon="seti:svg">
+    `@babylonian/core` turns a number into an SVG string in any JavaScript runtime.
+  </Card>
+  <Card title="Images and CLI" icon="seti:image">
+    `@babylonian/raster` renders PNG, JPEG and WebP with sharp, and `@babylonian/cli` does it from
+    the terminal.
+  </Card>
+</CardGrid>
+
+<style>{`
+  .examples { display: flex; flex-wrap: wrap; justify-content: center; align-items: end; gap: 2rem; margin-block: 1rem 2.5rem; }
+`}</style>
