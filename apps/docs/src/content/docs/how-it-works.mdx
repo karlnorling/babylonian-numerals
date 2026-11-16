@@ -1,0 +1,73 @@
+---
+title: How numbers are drawn
+description: Corner wedges and upright wedges, places in base 60, and how this library draws zero, fractions and negatives.
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import Glyph from '../../components/Glyph.astro';
+import DigitChart from '../../components/DigitChart.astro';
+
+Babylonian scribes wrote with a reed stylus pressed into wet clay. Numbers used just two marks: a **corner wedge** for ten and an **upright wedge** for one. Up to five corner wedges and nine upright ones make a digit from 1 to 59, with the tens on the left.
+
+## The fifty-nine digits
+
+<DigitChart />
+
+## Places
+
+Places run left to right, most significant first, each worth sixty times the next:
+
+| Place from the right | Worth   |
+| -------------------- | ------- |
+| 1st                  | 1       |
+| 2nd                  | 60      |
+| 3rd                  | 3,600   |
+| 4th                  | 216,000 |
+
+So 3661 is 1 × 3600 + 1 × 60 + 1, and a day of 86,400 seconds is 24, 0, 0.
+
+<div class="row">
+  <Glyph value={60} caption="60" />
+  <Glyph value={1993} caption="1993 = 33, 13" />
+  <Glyph value={3661} caption="3661 = 1, 1, 1" />
+  <Glyph value={86400} caption="86400 = 24, 0, 0" />
+</div>
+
+## Zero and empty places
+
+For most of Babylonian history, scribes wrote no zero: an empty place was a gap, or nothing at all, and readers worked out the size from context. Late Babylonian texts mark empty places with two slanted wedges. This library draws that placeholder by default, and `zero: 'space'` leaves the gap.
+
+<div class="row">
+  <Glyph value={3601} caption="3601, placeholder" />
+  <Glyph value={3601} zero="space" caption="3601, space" />
+</div>
+
+## Fractions
+
+Base 60 is good at fractions: a half is 30 sixtieths, a third is 20 and a quarter is 15. Every decimal fraction is exact in base 60, because 10ⁿ divides 60ⁿ.
+
+Scribes didn't mark where the whole number ended. This library puts a dot on the baseline there.
+
+<div class="row">
+  <Glyph value="12.5" caption="12.5 = 12;30" />
+  <Glyph value="0.25" caption="0.25 = 0;15" />
+  <Glyph value="0.75" caption="0.75 = 0;45" />
+</div>
+
+<Aside title="√2 on a clay tablet">
+  The tablet YBC 7289 gives the square root of 2 as 1;24,51,10, which is 1.4142129…, correct to
+  about six decimal places. `formatSexagesimal` writes numbers in that same notation.
+</Aside>
+
+## Negatives
+
+Babylonian numerals had no negative numbers. This library starts a negative number with a horizontal wedge.
+
+<div class="row">
+  <Glyph value={-42} caption="-42" />
+  <Glyph value="-12.5" caption="-12.5" />
+</div>
+
+<style>{`
+  .row { display: flex; flex-wrap: wrap; gap: 2rem; align-items: end; margin-block: 1.5rem; }
+`}</style>
